@@ -1,1 +1,1 @@
-# swe1-app
+# Django App for CI Testing and Heroku Deployment
