@@ -11,3 +11,5 @@ install:
 # command to run tests
 script:
   - pytest
+  
+os: osx
