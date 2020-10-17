@@ -11,21 +11,17 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 from os import environ, path
-#from dotenv import load_dotenv
 
 import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = path.dirname(path.dirname(path.abspath(__file__)))
 
-#load_dotenv(path.join(BASE_DIR, '.env'))
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # Raises django's ImproperlyConfigured exception if SECRET_KEY not in os.environ
-#SECRET_KEY = environ.get('DJANGO_SECRET_KEY')
-SECRET_KEY = 'blahblahrandomstuff'
+SECRET_KEY = "blahblahrandomstuff"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
