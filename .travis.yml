@@ -1,15 +1,8 @@
 language: python
-python:
-  - "3.6" 
-  - "3.7"
-  - "3.8"
-
-# command to install dependencies
 install:
-  - pip install -r requirements.txt
-  
-# command to run tests
-script:
-  - pytest
-  
-os: osx
+- pip install -r requirements.txt
+deploy:
+  provider: heroku
+  api_key:
+    secure: gZ7CIF0FGJsy1oGhw1mz89WEh5uhs/8azdSULGu2j3vR3KT0GVVJ6thqYv0rmQN1Sjje+xvqVMqFm8bgazsjxigrzATCdHcmSj9tHbTb6Oht4ikyxmZgVKJbA/syQ2mOj54A/ieb8MtZU7FFfTkPTQHcIu7zmnT9/mT+mVySzPAg6pfnsa38OxGIDGW/L9DD/A5yHpPfgKEFLi9SCeHmZTnrSTh+v5YagiO3d1u02Tfz9bxEY8RV+FTg/Orp2Gs7vgWZyhjRKgPSCE0IIEDj/A98+JV7ViNQztCZov5xnz0ttBAZyHVJNxplrayV24c7J8jYlSo3im2mCJrdQWhKeS48MhcWrJjO1+nBja2qlyXrf8ywFcu+L6K6GWZT2Pw7dLgKHbrIq9z3wA4asHhlTWajrPXx9q3DvisAYx5nPLpBqzBFIn+EvmjxnyyfgrljuUHZa6LfwMzGb0fcJZMJphG3HS9uclL7V2CD/4eYLn9YxXctCiucFsUuBxmKj2cMZUuG6fSggJcf7kCh3o3Grk2d5yLOlQ5dT1h8awEA3tS4SMQC5ve7sxMgxEaY26fkXqIahHf+eyZPephoSf5o14zgsPZ36XDlA0DeLdKObTNpZA6ooQFk9NIM5Pj/QaAiO+dyTqDWHmY+Clmgw5qlclyuQ5XRkOON5bghRA0MzVw=
+  app: swe1-app
