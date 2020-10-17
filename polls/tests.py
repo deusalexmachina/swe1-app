@@ -8,8 +8,10 @@ from .models import Choice, Question
 
 
 def create_choice(choice_text, votes):
-    question = create_question('tester text', 1)
-    return Choice.objects.create(choice_text=choice_text, votes=votes, question=question)
+    question = create_question("tester text", 1)
+    return Choice.objects.create(
+        choice_text=choice_text, votes=votes, question=question
+    )
 
 
 def create_question(question_text, days):
@@ -23,9 +25,9 @@ def create_question(question_text, days):
 
 class ChoiceTests(TestCase):
     def test_create_choice(self):
-        question = create_question('test', 5)
-        choice = create_choice('choice 1', 2)
-        test = Choice.objects.create(question=question, choice_text='choice 1', votes=2)
+        question = create_question("test", 5)
+        choice = create_choice("choice 1", 2)
+        test = Choice.objects.create(question=question, choice_text="choice 1", votes=2)
         self.assertTrue(choice, test)
 
 
@@ -33,8 +35,8 @@ class QuestionIndexViewTests(TestCase):
     def test_was_published_recently(self):
         now = timezone.now() - datetime.timedelta(hours=23, minutes=59, seconds=59)
         recent_question = Question(pub_date=now)
-        past_question = create_question('past', -5)
-        future_question = create_question('future', 5)
+        past_question = create_question("past", -5)
+        future_question = create_question("future", 5)
         test_past = past_question.was_published_recently()
         test_future = future_question.was_published_recently()
         test_recent = recent_question.was_published_recently()
@@ -112,4 +114,3 @@ class QuestionDetailViewTests(TestCase):
         url = reverse("polls:detail", args=(past_question.id,))
         response = self.client.get(url)
         self.assertContains(response, past_question.question_text)
-
