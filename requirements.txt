@@ -6,7 +6,6 @@ django-environ==0.4.5
 django_heroku==0.3.1
 flake8==3.8.4
 gunicorn==20.0.4
-python-dotenv==0.14.0
 
 
 
